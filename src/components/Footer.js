@@ -1,0 +1,85 @@
+import React from 'react';
+import './Footer.css';
+import { Link } from "react-router-dom";
+import logo from '../assets/logo.png';
+import { FaPhoneAlt, FaEnvelope, FaInstagram, FaFacebookF, FaYoutube, FaWhatsapp } from 'react-icons/fa';
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        {/* Left Column */}
+        <div className="footer-left">
+          <img src={logo} alt="Trip or Travel Holidays" className="footer-logo" />
+          <h2>Ready to Explore the World with Us?</h2>
+          <p>
+            Discover amazing destinations and unforgettable experiences. We offer fully customizable travel packages to make your journey truly yours.
+          </p>
+        </div>
+
+        {/* Middle Column */}
+        <div className="footer-middle">
+          <div className="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/destinations">Destinations</Link></li>
+              <li><Link to="/tour-packages">Tour Packages</Link></li>
+              <li><Link to="/blog">Travel Blog</Link></li>
+              <li><Link to="/privacy">Privacy Policy</Link></li>
+              <li><Link to="/contact">Contact Us</Link></li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Contact Column */}
+        <div className="footer-contact">
+          <h3>Contact Us</h3>
+          <p><FaPhoneAlt /> <a href="tel:+917795183828">+91 7795183828 </a></p>
+          <h3>Email Us</h3>
+          <p><FaEnvelope /> <a href="mailto:triportravelsholiday@gmail.com">triportravelsholiday@gmail.com</a></p>
+          <h3>Our Office</h3>
+          <p>
+            4th Floor, Hosur Main Road, above Domino's Pizza, near Christ University,<br />
+            Krishna Nagar, Koramangala Industrial Layout, S.G. Palya,<br />
+            Bengaluru, Karnataka 560029
+          </p>
+        </div>
+
+        {/* Right Column */}
+        <div className="footer-right">
+          <h3>Plan Your Trip</h3>
+          <p>
+            Whether you're dreaming of a peaceful retreat or an adventurous escape,
+            our team will help you craft a travel experience you'll never forget.
+            Start your journey today!
+          </p>
+
+          <div className="footer-socials">
+            <h3>Follow Us</h3>
+            <div className="social-icons">
+              <a href="https://www.facebook.com/profile.php?id=61563871814448" className="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <FaFacebookF />
+              </a>
+              <a href="https://www.instagram.com/trip_or_travel_holiday/?fbclid=IwY2xjawNe4EpleHRuA2FlbQIxMQBicmlkETExZ0gzODF4QXRVamFBcEZRAR6A1an_gypr7nyfKSOSVcbBg-evdtfGx0L8pSf0U6MjCzxy5e8WbvvA7YxHUg_aem_HmKo6jvnXDQku9Tt_5a1Sg" className="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <FaInstagram />
+              </a>
+              <a href="#" className="youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <FaYoutube />
+              </a>
+              <a href="https://wa.me/+917795183828" className="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <FaWhatsapp />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <p>© {new Date().getFullYear()} Trip or Travels Holidays. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
