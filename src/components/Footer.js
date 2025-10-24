@@ -61,10 +61,10 @@ const Footer = () => {
               <a href="https://www.facebook.com/profile.php?id=61563871814448" className="facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <FaFacebookF />
               </a>
-              <a href="https://www.instagram.com/trip_or_travel_holiday/?fbclid=IwY2xjawNe4EpleHRuA2FlbQIxMQBicmlkETExZ0gzODF4QXRVamFBcEZRAR6A1an_gypr7nyfKSOSVcbBg-evdtfGx0L8pSf0U6MjCzxy5e8WbvvA7YxHUg_aem_HmKo6jvnXDQku9Tt_5a1Sg" className="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a href="https://www.youtube.com/" className="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <FaInstagram />
               </a>
-              <a href="#" className="youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <a href="https://www.youtube.com/@TriporTravel-w2w" className="youtube" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <FaYoutube />
               </a>
               <a href="https://wa.me/+917795183828" className="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">

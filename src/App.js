@@ -13,6 +13,7 @@ import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import Privacy from "./pages/Privacy/Privacy";
 import Services from "./pages/Service/Service";
+import FloatingIcons from "./components/FloatingIcons";
 
 function AppWrapper() {
   const location = useLocation();
@@ -42,6 +43,7 @@ function AppWrapper() {
           <Route path="/register" element={<Register />} />
           <Route path="/privacy" element={<Privacy />} />
         </Routes>
+        <FloatingIcons />
       </AnimatePresence>
 
       <Footer />
