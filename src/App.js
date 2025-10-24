@@ -14,6 +14,10 @@ import Register from "./pages/Auth/Register";
 import Privacy from "./pages/Privacy/Privacy";
 import Services from "./pages/Service/Service";
 import FloatingIcons from "./components/FloatingIcons";
+import Test from "./pages/Package/Test";
+import TravelBookingSystem from "./pages/Package/TravelBookingSystem";
+import PackageDetailsPage from "./pages/Package/PackageDetailsPage";
+import PackageDetails from "./pages/Package/PackageDetails";
 
 function AppWrapper() {
   const location = useLocation();
@@ -39,6 +43,12 @@ function AppWrapper() {
           <Route path="/service" element={<Services/>} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/test" element={<Test/>} />
+          <Route path="/package" element={<TravelBookingSystem/>} />
+          {/* <Route path="/package/:id" element={<PackageDetailsPage />} /> */}
+          <Route path="/package/:id" element={<PackageDetails />} />
+
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/privacy" element={<Privacy />} />

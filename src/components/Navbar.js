@@ -197,7 +197,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden lg:flex items-center gap-16">
-          {["/", "/about", "/gallery", "/contact"].map((path, index) => (
+          {["/", "/about", "/gallery", "/contact", "/package", "/test"].map((path, index) => (
             <Link
               key={index}
               to={path}
@@ -206,7 +206,7 @@ const Navbar = () => {
               }`}
             >
               {/* text-[#222] */}
-              {["HOME", "ABOUT", "GALLERY", "CONTACT US"][index]}
+              {["HOME", "ABOUT", "GALLERY", "CONTACT US","Package", ""][index]}
 
               {/* Hover underline */}
               <span

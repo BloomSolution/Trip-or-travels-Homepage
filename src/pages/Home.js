@@ -17,7 +17,7 @@ function Home()
     {/* <Preloader/> */}
    
     <Banner/>
-   <Enquiry/>
+   {/* <Enquiry/> */}
     <AboutUs/>
     <Destinations/>
     <TravelExperience/>
