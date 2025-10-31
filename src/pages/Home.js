@@ -35,7 +35,7 @@ function Home()
    {/* <Enquiry/> */}
     <AboutUs/>
     <Destinations/>
-    <TourBookingSystem/>
+    {/* <TourBookingSystem/> */}
     <TravelExperience/>
     <FeaturedTour/>
     <Testimonial/>
