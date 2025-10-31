@@ -14,10 +14,12 @@ import Register from "./pages/Auth/Register";
 import Privacy from "./pages/Privacy/Privacy";
 import Services from "./pages/Service/Service";
 import FloatingIcons from "./components/FloatingIcons";
-import Test from "./pages/Package/Test";
+import Test from "./pages/Tour/Test";
 import TravelBookingSystem from "./pages/Package/TravelBookingSystem";
 import PackageDetailsPage from "./pages/Package/PackageDetailsPage";
 import PackageDetails from "./pages/Package/PackageDetails";
+import TourDetails from "./pages/Tour/TourDetails";
+import TourBookingSystem from "./pages/Tour/TourBookingSystem";
 
 function AppWrapper() {
   const location = useLocation();
@@ -47,6 +49,7 @@ function AppWrapper() {
           <Route path="/package" element={<TravelBookingSystem/>} />
           {/* <Route path="/package/:id" element={<PackageDetailsPage />} /> */}
           <Route path="/package/:id" element={<PackageDetails />} />
+          <Route path="/tours/:id" element={<TourDetails />} />
 
 
           <Route path="/login" element={<Login />} />

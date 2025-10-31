@@ -167,7 +167,7 @@ const AboutUs = () => {
                 {card.text}
               </motion.p>
               
-              <div className="card-stats">
+              {/* <div className="card-stats">
                 {card.stats.map((stat, index) => (
                   <motion.div 
                     className="stat-item"
@@ -187,7 +187,7 @@ const AboutUs = () => {
                     <div className="stat-label">{stat.label}</div>
                   </motion.div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </motion.div>
         ))}

@@ -364,9 +364,14 @@ const Navbar = () => {
                 <span>triportravelsholiday@gmail.com</span>
               </div>
             </div>
-            <div>
-              <span>Contact</span>
-            </div>
+            {/* ✅ Contact Button */}
+            <Link
+              to="/contact"
+              className=" backdrop-blur-3xl bg-white/20 border border-white/30 text-white font-semibold px-4 py-1 rounded-full hover:bg-[#ff6600] hover:text-white transition-all duration-300 shadow-md"
+            >
+              Contact Us
+            </Link>
+
           </div>
         </div>
 
@@ -378,13 +383,13 @@ const Navbar = () => {
         >
           <div className="max-w-[1400px] w-[90%] mx-auto flex justify-between items-center py-3">
 
-<Link to="/" className="flex items-center">
-  <img
-    src={logo}
-    alt="Logo"
-    className="w-[150px] lg:w-[140px] hover:scale-105 transition duration-300 cursor-pointer"
-  />
-</Link>
+          <Link to="/" className="flex items-center">
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-[150px] lg:w-[120px] hover:scale-105 transition duration-300 cursor-pointer"
+            />
+          </Link>
 
             {/* Desktop Menu */}
             <nav className="hidden lg:flex items-center gap-16">
@@ -399,7 +404,7 @@ const Navbar = () => {
   </Link>
 
   {/* 🏝️ Dropdown Grid */}
-  <div className="absolute left-0 top-full mt-3 hidden group-hover:grid grid-cols-4 gap-4 bg-white rounded-2xl shadow-xl p-4 w-[800px] z-50">
+  <div className="absolute left-0 top-full mt-4 hidden group-hover:grid grid-cols-4 gap-4 bg-white rounded-2xl shadow-xl p-4 w-[800px] z-50">
     {[
       { name: "Vietnam", img: "https://images.unsplash.com/photo-1548786817-47c6c7c0a6f7" },
       { name: "Bali", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" },
@@ -463,7 +468,7 @@ const Navbar = () => {
 
 
 
-              {[ "/about", "/gallery", "/contact", "/package", "/test"].map(
+              {[ "/about", "/package", "/gallery", "/contact",  "/test"].map(
                 (path, index) => (
                   <Link
                     key={index}
@@ -474,7 +479,7 @@ const Navbar = () => {
                         : "text-white/80 hover:text-[#ff6600]"
                     }`}
                   >
-                    {[ "ABOUT", "GALLERY", "CONTACT US", "PACKAGE",][index]}
+                    {[ "ABOUT",  "PACKAGE","BLOG"][index]}
                   </Link>
                 )
               )}
@@ -482,7 +487,7 @@ const Navbar = () => {
             </nav>
 
             {/* Inquiry Button */}
-            <div
+            {/* <div
               className={`hidden lg:flex items-center gap-2 px-3 py-1 rounded-md cursor-pointer ${
                 isScrolled ? "bg-white/20" : "bg-[#ffffff26] backdrop-blur-xl"
               }`}
@@ -494,7 +499,7 @@ const Navbar = () => {
                   +91 7795183828
                 </a>
               </div>
-            </div>
+            </div> */}
 
             {/* Mobile Menu Toggle */}
             <button

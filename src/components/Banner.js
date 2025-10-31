@@ -115,7 +115,7 @@ const Hero = () => {
             alt="banner"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center px-4">
+          <div className="absolute inset-0 bg-black/0 flex flex-col justify-center items-center text-center px-4">
           <p 
           className="text-2xl md:text-3xl font-semibold text-amber-400 drop-shadow-lg"
           > {banners[index].tagline}</p>

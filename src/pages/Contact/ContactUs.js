@@ -378,10 +378,13 @@ import { Mail, Phone, MapPin, Send, CheckCircle, Plane, Palmtree, Mountain } fro
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+     name: '',
+  email: '',
+  phone: '',
+  message: '',
+  fromDate: '',
+  toDate: '',
+  destination: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [focusedField, setFocusedField] = useState('');
@@ -390,25 +393,38 @@ export default function ContactUs() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  
-    const whatsappNumber = "917795183828";
-    const message = `Hello, I am ${formData.name}.
-Email: ${formData.email}
-Phone: ${formData.phone}
-Message: ${formData.message}`;
-  
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-  
-    window.open(whatsappURL, "_blank");
-    
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      setIsSubmitted(false);
-    }, 3000);
-  };
+ const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const whatsappNumber = "917795183828";
+
+  const message = `Hello, I am ${formData.name}.
+📧 Email: ${formData.email}
+📞 Phone: ${formData.phone}
+📍 Destination: ${formData.destination}
+🗓️ Journey From: ${formData.fromDate}
+🗓️ Journey To: ${formData.toDate}
+💬 Message: ${formData.message}`;
+
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappURL, "_blank");
+
+  setIsSubmitted(true);
+  setTimeout(() => {
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      fromDate: '',
+      toDate: '',
+      destination: ''
+    });
+    setIsSubmitted(false);
+  }, 3000);
+};
+
   
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-sky-50 via-white">
@@ -607,6 +623,80 @@ Message: ${formData.message}`;
                         />
                       </div>
                     </div>
+
+                    {/* Journey Dates and Destination */}
+<div className="grid md:grid-cols-3 gap-6">
+  {/* From Date */}
+  <div className="relative form-field">
+    <label className="block text-sm font-bold text-gray-800 mb-2">
+      Journey From <span className="text-rose-500">*</span>
+    </label>
+    <input
+      type="date"
+      name="fromDate"
+      value={formData.fromDate || ''}
+      onChange={handleChange}
+      onFocus={() => setFocusedField('fromDate')}
+      onBlur={() => setFocusedField('')}
+      required
+      className={`w-full px-5 py-4 rounded-2xl border-2 transition-all duration-300 outline-none bg-white/70 backdrop-blur-sm text-gray-900 ${
+        focusedField === 'fromDate'
+          ? 'border-sky-500 shadow-xl shadow-sky-100 scale-[1.02]'
+          : 'border-gray-200 hover:border-sky-300 shadow-md'
+      }`}
+    />
+  </div>
+
+  {/* To Date */}
+  <div className="relative form-field">
+    <label className="block text-sm font-bold text-gray-800 mb-2">
+      Journey To <span className="text-rose-500">*</span>
+    </label>
+    <input
+      type="date"
+      name="toDate"
+      value={formData.toDate || ''}
+      onChange={handleChange}
+      onFocus={() => setFocusedField('toDate')}
+      onBlur={() => setFocusedField('')}
+      required
+      className={`w-full px-5 py-4 rounded-2xl border-2 transition-all duration-300 outline-none bg-white/70 backdrop-blur-sm text-gray-900 ${
+        focusedField === 'toDate'
+          ? 'border-sky-500 shadow-xl shadow-sky-100 scale-[1.02]'
+          : 'border-gray-200 hover:border-sky-300 shadow-md'
+      }`}
+    />
+  </div>
+
+  {/* Destination Dropdown */}
+  <div className="relative form-field">
+    <label className="block text-sm font-bold text-gray-800 mb-2">
+      Destination <span className="text-rose-500">*</span>
+    </label>
+    <select
+      name="destination"
+      value={formData.destination || ''}
+      onChange={handleChange}
+      onFocus={() => setFocusedField('destination')}
+      onBlur={() => setFocusedField('')}
+      required
+      className={`w-full px-5 py-4 rounded-2xl border-2 transition-all duration-300 outline-none bg-white/70 backdrop-blur-sm text-gray-900 ${
+        focusedField === 'destination'
+          ? 'border-sky-500 shadow-xl shadow-sky-100 scale-[1.02]'
+          : 'border-gray-200 hover:border-sky-300 shadow-md'
+      }`}
+    >
+      <option value="">Select Destination</option>
+      <option value="Bali">Bali</option>
+      <option value="Maldives">Maldives</option>
+      <option value="Goa">Goa</option>
+      <option value="Dubai">Dubai</option>
+      <option value="Singapore">Singapore</option>
+      <option value="Thailand">Thailand</option>
+    </select>
+  </div>
+</div>
+
 
                     {/* Message Field */}
                     <div className="relative form-field">
