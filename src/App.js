@@ -20,6 +20,10 @@ import PackageDetailsPage from "./pages/Package/PackageDetailsPage";
 import PackageDetails from "./pages/Package/PackageDetails";
 import TourDetails from "./pages/Tour/TourDetails";
 import TourBookingSystem from "./pages/Tour/TourBookingSystem";
+import NationalTours from "./pages/National/NationalTours";
+import InternationalTours from "./pages/InterNational/InternationalTours";
+import National from "./pages/National/National";
+import InterNational from "./pages/InterNational/InterNational";
 
 function AppWrapper() {
   const location = useLocation();
@@ -49,6 +53,12 @@ function AppWrapper() {
           <Route path="/package" element={<TravelBookingSystem/>} />
           {/* <Route path="/package/:id" element={<PackageDetailsPage />} /> */}
           <Route path="/package/:id" element={<PackageDetails />} />
+
+           {/* <Route path="/international" element={<InternationalTours />} />
+          <Route path="/national" element={<NationalTours />} /> */}
+
+          <Route path="/international" element={<InterNational/>} />
+          <Route path="/national" element={<National/>} />
           <Route path="/tours/:id" element={<TourDetails />} />
 
 

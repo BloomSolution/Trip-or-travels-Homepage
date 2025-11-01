@@ -5,9 +5,17 @@ import TourCard from "./TourCard";
 
 const UpcomingToursSection = ({ onViewMore }) => {
   // Filter all tours having upcomingDates
+   // Filter all tours that have any available seats (direct or inside date array)
+  const filterWithSeats = (tour) => {
+    if (Array.isArray(tour.date)) {
+      return tour.date.some((d) => d.seatsLeft && d.seatsLeft > 0);
+    }
+    return tour.seatsLeft && tour.seatsLeft > 0;
+  };
+
   const upcomingTours = [
-    ...internationalTours.filter((tour) => tour.fullDetails?.upcomingDates),
-    ...nationalTours.filter((tour) => tour.fullDetails?.upcomingDates),
+    ...internationalTours.filter(filterWithSeats),
+    ...nationalTours.filter(filterWithSeats),
   ];
 
   if (upcomingTours.length === 0) return null;

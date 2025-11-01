@@ -68,100 +68,257 @@
 
 // export default TourCard;
 
+// ! main
+// import React from "react";
+// import { MapPin, Calendar, Phone } from "lucide-react";
+// import { Link } from "react-router-dom";
 
+// const TourCard = ({ tour, onViewMore }) => {
+//      // Extract start dates from date string
+//  const displayDates = tour?.date
+//     ? tour.date
+//         .split(",")
+//         .map((d) => d.trim().split("-")[0].trim())
+//         .join(" | ")
+//     : "Dates Coming Soon"
 
+//     return (
+//         <>
+//   <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
+//     {/* Image */}
+//     <div className="relative">
+//       <img
+//         src={tour.image}
+//         alt={tour.title}
+//         className="w-full h-56 object-cover rounded-t-2xl"
+//       />
+//       {tour.seatsLeft && (
+//         <div className="absolute top-3 right-3 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold shadow">
+//           {tour.seatsLeft} Seats Left
+//         </div>
+//       )}
+//     </div>
+
+//     {/* Details */}
+//     <div className="p-5">
+//       <h3 className="font-bold text-lg text-gray-800 mb-3 line-clamp-2">
+//         {tour.title}
+//       </h3>
+
+//       <div className="flex items-start justify-between mb-4">
+//         <div>
+//           <div className="flex items-center text-gray-600 text-sm mb-1">
+//             <MapPin className="w-4 h-4 mr-1" />
+//             {tour.location}
+//           </div>
+//           <div className="flex items-center text-gray-600 text-sm">
+//             <Calendar className="w-4 h-4 mr-1" />
+//             {tour.duration}
+//           </div>
+//         </div>
+
+//         <div className="text-right">
+//           {tour.originalPrice && (
+//            <div className="text-sm text-gray-400">
+//             <span>Price </span>
+//             <span
+//                 className="line-through"
+//                 style={{ textDecorationColor: "orange" }}
+//             >
+//                 {tour.originalPrice}
+//             </span>
+//             <span className="text-sm text-gray-500 font-normal"> /pp</span>
+//            </div>
+
+//           )}
+//           <div className="text-xl font-bold text-gray-900">
+//             {tour.price}
+//             <span className="text-sm text-gray-500 font-normal"> /pp</span>
+//           </div>
+
+//           <div className="mt-2 flex justify-start">
+//   {tour.seatsLeft && (
+//     <div className="bg-orange-50 border border-gray-300 text-green-700 px-4 py-1 rounded-md text-xs font-semibold shadow w-fit ml-0">
+//       {tour.seatsLeft} Seats Left
+//     </div>
+//   )}
+// </div>
+
+//         </div>
+//       </div>
+
+//       <div className="flex items-center text-sm text-gray-600 mb-3">
+//         <Calendar className="w-4 h-4 mr-1 text-orange-500" />
+//         <span>{displayDates}</span>
+//         {/* <span>{tour.date?.split(",")[0]}</span>  */}
+//       </div>
+
+//       <div className="text-center text-gray-700 border text-xs bg-gray-50 py-1 rounded mb-4">
+//         {tour.travelers}+ travelers can’t be wrong — book your trip today!
+//       </div>
+
+//       <div className="flex gap-3">
+//         <button className="flex items-center justify-center w-1/3 border-2 border-orange-500 text-orange-500 py-2 rounded-lg font-medium hover:bg-orange-50 transition-colors">
+//           <Phone className="w-4 h-4 mr-1" /> Call
+//         </button>
+//         <Link to={`/tours/${tour.id}`} state={{ tour }} className="flex-1">
+//           <button
+//             onClick={() => onViewMore?.(tour)}
+//             className="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition-colors"
+//           >
+//             View More
+//           </button>
+//         </Link>
+//       </div>
+//     </div>
+//   </div>
+//   </>
+//     )
+// };
+
+// export default TourCard;
+
+// ! ex
 import React from "react";
 import { MapPin, Calendar, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const TourCard = ({ tour, onViewMore }) => (
-  <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
-    {/* Image */}
-    <div className="relative">
-      <img
-        src={tour.image}
-        alt={tour.title}
-        className="w-full h-56 object-cover rounded-t-2xl"
-      />
-      {tour.seatsLeft && (
-        <div className="absolute top-3 right-3 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold shadow">
-          {tour.seatsLeft} Seats Left
-        </div>
-      )}
-    </div>
+const TourCard = ({ tour, onViewMore }) => {
+  const navigate = useNavigate();
+  const handleViewMore = () =>
+    navigate(`/tours/${tour.id}`, { state: { tour } });
 
-    {/* Details */}
-    <div className="p-5">
-      <h3 className="font-bold text-lg text-gray-800 mb-3 line-clamp-2">
-        {tour.title}
-      </h3>
+  const displayDates = Array.isArray(tour?.date)
+    ? tour.date
+        .map((d) => {
+          if (typeof d === "object" && d.date)
+            return d.date.split("-")[0].trim(); // if object
+          if (typeof d === "string") return d.split("-")[0].trim(); // if string
+          return "";
+        })
+        .filter(Boolean)
+        .join(" | ")
+    : typeof tour?.date === "string"
+    ? tour.date
+        .split(",")
+        .map((d) => d.trim().split("-")[0].trim())
+        .join(" | ")
+    : "Dates Coming Soon";
 
-      <div className="flex items-start justify-between mb-4">
-        <div>
-          <div className="flex items-center text-gray-600 text-sm mb-1">
-            <MapPin className="w-4 h-4 mr-1" />
-            {tour.location}
-          </div>
-          <div className="flex items-center text-gray-600 text-sm">
-            <Calendar className="w-4 h-4 mr-1" />
-            {tour.duration}
-          </div>
-        </div>
-
-        <div className="text-right">
-          {tour.originalPrice && (
-           <div className="text-sm text-gray-400">
-            <span>Price </span>
-            <span
-                className="line-through"
-                style={{ textDecorationColor: "orange" }}
-            >
-                {tour.originalPrice}
-            </span>
-            <span className="text-sm text-gray-500 font-normal"> /pp</span>
-           </div>
-
+  return (
+    <>
+      <div
+        onClick={handleViewMore}
+        className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+      >
+        {/* Image */}
+        <div className="relative">
+          <img
+            src={tour.image}
+            alt={tour.title}
+            className="w-full h-56 object-cover rounded-t-2xl"
+          />
+          {/* {tour.seatsLeft && (
+                        <div className="absolute top-3 right-3 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold shadow">
+                            {tour.seatsLeft} Seats Left
+                        </div>
+                    )} */}
+          {(tour.seatsLeft ||
+            (Array.isArray(tour.date) && tour.date[0]?.seatsLeft)) && (
+            <div className="absolute top-3 right-3 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold shadow">
+              {tour.seatsLeft ? tour.seatsLeft : tour.date[0]?.seatsLeft} Seats
+              Left
+            </div>
           )}
-          <div className="text-xl font-bold text-gray-900"> 
-            {tour.price}
-            <span className="text-sm text-gray-500 font-normal"> /pp</span>
+        </div>
+
+        {/* Details */}
+        <div className="p-5">
+          <h3 className="font-bold text-lg text-gray-800 mb-3 line-clamp-2">
+            {tour.title}
+          </h3>
+
+          <div className="flex items-start justify-between mb-4">
+            <div>
+              <div className="flex items-center text-gray-600 text-sm mb-1">
+                <MapPin className="w-4 h-4 mr-1" />
+                {tour.location}
+              </div>
+              <div className="flex items-center text-gray-600 text-sm">
+                <Calendar className="w-4 h-4 mr-1" />
+                {tour.duration}
+              </div>
+            </div>
+
+            <div className="text-right">
+              {tour.originalPrice && (
+                <div className="text-sm text-gray-400">
+                  <span>Price </span>
+                  <span
+                    className="line-through"
+                    style={{ textDecorationColor: "orange" }}
+                  >
+                    {tour.originalPrice}
+                  </span>
+                  <span className="text-sm text-gray-500 font-normal">
+                    {" "}
+                    /pp
+                  </span>
+                </div>
+              )}
+              <div className="text-xl font-bold text-gray-900">
+                {tour.price}
+                <span className="text-sm text-gray-500 font-normal"> /pp</span>
+              </div>
+
+              {/* <div className="mt-2 flex justify-start">
+                                {tour.seatsLeft && (
+                                    <div className="bg-orange-50 border border-gray-300 text-green-700 px-4 py-1 rounded-md text-xs font-semibold shadow w-fit ml-0">
+                                        {tour.seatsLeft} Seats Left
+                                    </div>
+                                )}
+                            </div> */}
+              <div className="mt-2 flex justify-start">
+                {tour.seatsLeft ? (
+                  <div className="bg-orange-50 border border-gray-300 text-green-700 px-4 py-1 rounded-md text-xs font-semibold shadow w-fit ml-0">
+                    {tour.seatsLeft} Seats Left
+                  </div>
+                ) : Array.isArray(tour.date) && tour.date[0]?.seatsLeft ? (
+                  <div className="bg-orange-50 border border-gray-300 text-green-700 px-4 py-1 rounded-md text-xs font-semibold shadow w-fit ml-0">
+                    {tour.date[0].seatsLeft} Seats Left
+                  </div>
+                ) : null}
+              </div>
+            </div>
           </div>
 
-          <div className="mt-2 flex justify-start">
-  {tour.seatsLeft && (
-    <div className="bg-orange-50 border border-gray-300 text-green-700 px-4 py-1 rounded-md text-xs font-semibold shadow w-fit ml-0">
-      {tour.seatsLeft} Seats Left
-    </div>
-  )}
-</div>
+          <div className="flex items-center text-sm text-gray-600 mb-3">
+            <Calendar className="w-4 h-4 mr-1 text-orange-500" />
+            <span>{displayDates}</span>
+          </div>
 
+          <div className="text-center text-gray-700 border text-xs bg-gray-50 py-1 rounded mb-4">
+            {tour.travelers}+ travelers can’t be wrong — book your trip today!
+          </div>
+
+          <div className="flex gap-3">
+            <button className="flex items-center justify-center w-1/3 border-2 border-orange-500 text-orange-500 py-2 rounded-lg font-medium hover:bg-orange-50 transition-colors">
+              <Phone className="w-4 h-4 mr-1" /> Call
+            </button>
+            {/* <Link to={`/tours/${tour.id}`} state={{ tour }} className="flex-1"> */}
+            <button
+              // onClick={() => onViewMore?.(tour)}
+              onClick={handleViewMore}
+              className="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition-colors"
+            >
+              View More
+            </button>
+            {/* </Link> */}
+          </div>
         </div>
       </div>
-
-      <div className="flex items-center text-sm text-gray-600 mb-3">
-        <Calendar className="w-4 h-4 mr-1 text-orange-500" />
-        <span>{tour.date}</span>
-      </div>
-
-      <div className="text-center text-gray-700 border text-xs bg-gray-50 py-1 rounded mb-4">
-        {tour.travelers}+ travelers can’t be wrong — book your trip today!
-      </div>
-
-      <div className="flex gap-3">
-        <button className="flex items-center justify-center w-1/3 border-2 border-orange-500 text-orange-500 py-2 rounded-lg font-medium hover:bg-orange-50 transition-colors">
-          <Phone className="w-4 h-4 mr-1" /> Call
-        </button>
-        <Link to={`/tours/${tour.id}`} state={{ tour }} className="flex-1">
-          <button
-            onClick={() => onViewMore?.(tour)}
-            className="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition-colors"
-          >
-            View More
-          </button>
-        </Link>
-      </div>
-    </div>
-  </div>
-);
+    </>
+  );
+};
 
 export default TourCard;

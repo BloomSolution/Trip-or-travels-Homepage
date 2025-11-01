@@ -66,8 +66,13 @@ export const nationalTours = [
     location: 'Ayodhya',
     duration: '3 Days / 2 Nights',
     price: '₹35,999.00',
+    // seatsLeft: 5,
     soldOut: true,
-    date: '19 Nov, 20 Feb',
+    date: [
+    { date: '9 Dec - 11 Dec', seatsLeft: 5 },
+    { date: '10 Feb - 15 Feb', seatsLeft: 2 },
+  ],
+    // date: '9 Dec - 11 Dec, 10 Feb - 15 Feb',
     travelers: 4,
     image: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=400&h=300&fit=crop',
     fullDetails: {
@@ -143,9 +148,9 @@ export const nationalTours = [
         'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=300&h=200&fit=crop',
         'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=300&h=200&fit=crop'
       ],
-      upcomingDates: [
-        { date: '19 Nov - 21 Nov', seatsLeft: 5 }
-      ]
+    //   upcomingDates: [
+    //     { date: '19 Nov - 21 Nov', seatsLeft: 5 }
+    //   ]
     }
   },
   {
@@ -155,8 +160,12 @@ export const nationalTours = [
     duration: '6 Days / 5 Nights',
     price: '₹48,999.00',
     originalPrice: '₹54,999.00',
-    seatsLeft: 8,
-    date: '10 Dec',
+    // seatsLeft: 8,
+    // date: '19 Nov - 21 Nov, 10 Dec - 15 Dec',
+    date: [
+    { date: '19 Nov - 21 Nov', seatsLeft: 5 },
+    { date: '10 Dec - 15 Dec', seatsLeft: 2 },
+  ],
     travelers: 25,
     image: 'https://www.sikhtours.in/admin/uploads/Kashmir-Tour-package.png',
     fullDetails: {
@@ -176,7 +185,7 @@ export const nationalTours = [
         'Local Guide',
         'Driver Charges'
       ],
-      upcomingDates: [{ date: '10 Dec - 15 Dec', seatsLeft: 8 }],
+    //   upcomingDates: [{ date: '10 Dec - 15 Dec', seatsLeft: 8 }],
 
       images: [
         'https://www.sikhtours.in/admin/uploads/Kashmir-Tour-package.png',

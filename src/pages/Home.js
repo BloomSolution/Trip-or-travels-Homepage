@@ -11,6 +11,8 @@ import Insta from '../components/Insta';
 import Test from './Tour/Test';
 import TourBookingSystem from './Tour/TourBookingSystem';
 import UpcomingToursSection from './Tour/UpcomingToursSection';
+import NationalTours from './National/NationalTours';
+import InternationalTours from './InterNational/InternationalTours';
 
 
 function Home()
@@ -32,10 +34,12 @@ function Home()
     <Banner/>
     {/* <Test/> */}
     <UpcomingToursSection onViewMore={handleViewMore} />
+    {/* <NationalTours/>
+    <InternationalTours/> */}
    {/* <Enquiry/> */}
     <AboutUs/>
+    <TourBookingSystem/>
     <Destinations/>
-    {/* <TourBookingSystem/> */}
     <TravelExperience/>
     <FeaturedTour/>
     <Testimonial/>
