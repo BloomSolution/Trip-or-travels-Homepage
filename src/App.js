@@ -24,6 +24,7 @@ import NationalTours from "./pages/National/NationalTours";
 import InternationalTours from "./pages/InterNational/InternationalTours";
 import National from "./pages/National/National";
 import InterNational from "./pages/InterNational/InterNational";
+import Popup from "./pages/Popup";
 
 function AppWrapper() {
   const location = useLocation();
@@ -41,6 +42,7 @@ function AppWrapper() {
 
       {/* 👇 ensures each navigation scrolls to top */}
       <ScrollToTop />
+      <Popup/>
 
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
