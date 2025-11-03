@@ -13,6 +13,7 @@ import TourBookingSystem from './Tour/TourBookingSystem';
 import UpcomingToursSection from './Tour/UpcomingToursSection';
 import NationalTours from './National/NationalTours';
 import InternationalTours from './InterNational/InternationalTours';
+import Tracks from './Tracks';
 
 
 function Home()
@@ -33,6 +34,7 @@ function Home()
    
     <Banner/>
     {/* <Test/> */}
+    <Tracks/>
     <UpcomingToursSection onViewMore={handleViewMore} />
     {/* <NationalTours/>
     <InternationalTours/> */}

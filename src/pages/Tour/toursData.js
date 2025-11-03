@@ -3,6 +3,101 @@
 export const internationalTours = [
   {
     id: 1,
+    title: 'Discover the Wonders of Abu Dhabi & Dubai',
+    location: 'Abu Dhabi, UAE',
+    duration: '6 Days / 5 Nights',
+    price: '₹97,000.00',
+    // seatsLeft: 5,
+    soldOut: false,
+    date: [
+    { date: '28 Nov - 03 Dec', seatsLeft: 20 },
+  ],
+    // date: '9 Dec - 11 Dec, 10 Feb - 15 Feb',
+    travelers: 20,
+    image: 'https://a.cdn-hotels.com/gdcs/production15/d288/4474ed70-d272-41b6-9947-b76204f18fa1.jpg',
+    fullDetails: {
+      perPerson: true,
+      age: 'AllAges',
+      happyTravelers: '250+',
+      overview: "Experience the luxury and charm of the UAE with our 6 Days / 5 Nights Abu Dhabi & Dubai Tour. From futuristic skylines and desert adventures to cultural landmarks and pristine beaches, this journey blends adventure, relaxation, and Arabian elegance perfectly.",
+      highlights: [
+        'Visit the majestic Sheikh Zayed Grand Mosque',
+        'Enjoy a luxury Dhow Cruise with dinner at Dubai Marina',
+        'Experience thrilling Desert Safari with BBQ dinner & live shows',
+        'Explore the world-famous Burj Khalifa and Dubai Mall',
+        'Relax at the Corniche Beach and Heritage Village in Abu Dhabi',
+        'Visit Ferrari World and the newly built BAPS Hindu Temple',
+      ],
+      inclusions: [
+        '5 Nights 4★ Hotel Accommodation (Twin Sharing)',
+        'Daily Breakfast, Lunch & Dinner',
+        'Return Airfare & Visa',
+        'All Entry Fees and Transfers (SIC basis)',
+      ],
+      exclusions: [
+        'Personal expenses (tips, laundry, shopping)',
+        'Optional activities or items not mentioned',
+        'Peak season surcharges / early check-in / late checkout',
+        '5% GST'
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: '28 Nov 2025 – Arrival & Dhow Cruise Marina',
+          description: 'Welcome to Dubai! After immigration and hotel check-in, relax until your evening pickup at 6 PM for a Dhow Cruise at Dubai Marina. Enjoy breathtaking canal views, buffet dinner, and live entertainment aboard a traditional dhow.',
+          meals: 'Breakfast, Lunch, Dinner',
+          accommodation: '4★ Hotel in Dubai'
+        },
+        {
+          day: 2,
+          title: '29 Nov 2025 – Dubai City Tour & Desert Safari',
+          description: 'After breakfast, explore Dubai’s landmarks including Jumeirah Beach, Burj Al Arab, Museum of the Future, Palm Atlantis, and more. Afternoon: Desert Safari adventure with dune bashing, camel ride, Tanura show, belly dance, and BBQ dinner.',
+          meals: 'Breakfast, Lunch, Dinner',
+          accommodation: '4★ Hotel in Dubai'
+        },
+        {
+          day: 3,
+          title: '30 Nov 2025 – Dubai Mall & Burj Khalifa',
+          description: 'Visit Dubai Mall and ascend the Burj Khalifa (125th floor) for panoramic views. Enjoy leisure and shopping at Meena Bazaar, Gold Souq, or Deira City Centre.',
+          meals: 'Breakfast, Lunch, Dinner',
+          accommodation: '4★ Hotel in Dubai'
+        },
+        {
+          day: 4,
+          title: '01 Dec 2025 – Dubai Frame, Miracle Garden & Global Village',
+          description: 'Start at Dubai Frame for panoramic city views, then Miracle Garden — the world’s largest flower park, followed by Global Village — Dubai’s multicultural festival of food and shopping.',
+          meals: 'Breakfast, Lunch, Dinner',
+          accommodation: '4★ Hotel in Dubai'
+        },
+        {
+          day: 5,
+          title: '02 Dec 2025 – Abu Dhabi City Tour',
+          description: 'Visit BAPS Hindu Mandir, Sheikh Zayed Grand Mosque, Emirates Palace, Corniche, Heritage Village, Ferrari World (photo stop), and shop at Marina Mall or Dates Market.',
+          meals: 'Breakfast, Lunch, Dinner',
+          accommodation: '4★ Hotel in Dubai'
+        },
+        {
+          day: 6,
+          title: '03 Dec 2025 – Limousine Ride & Departure',
+          description: 'After breakfast, enjoy a 1-hour luxury limousine ride around Dubai. Check out by noon and transfer to the airport for your return flight.',
+          meals: 'Breakfast, Lunch, Dinner',
+          accommodation: '_'
+        }
+      ],
+      images: [
+         'https://a.cdn-hotels.com/gdcs/production15/d288/4474ed70-d272-41b6-9947-b76204f18fa1.jpg',
+      'https://www.itl.cat/pngfile/big/80-801682_abu-dhabi.jpg',
+      'https://www.tourpackagedubai.com/wp-content/uploads/2019/12/abu_dhabi_Sheikh_Zayed_Mosque-city-tour-deals_with_family_from_Dubai.jpg',
+      'https://media.istockphoto.com/photos/beautiful-high-angle-view-of-modern-skyscrapers-in-abu-dhabi-taken-a-picture-id1143221045?b=1&k=20&m=1143221045&s=170667a&w=0&h=_hnOm_elRroeOoA0d0OJcVWopiBm4ZRohGYodeE8_Hc=',
+      'https://visitabudhabi.ae/-/media/project/vad/plan-your-trip/article-hub/12-things-to-do-for-free-in-abu-dhabi/article-images/corniche-beach.jpg'
+      ],
+    //   upcomingDates: [
+    //     { date: '19 Nov - 21 Nov', seatsLeft: 5 }
+    //   ]
+    }
+  },
+  {
+    id: 2,
     title: 'Japan Bloomscape',
     location: 'Japan',
     duration: '8 Days / 7 Nights',
@@ -14,7 +109,7 @@ export const internationalTours = [
     image: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=400&h=300&fit=crop'
   },
   {
-    id: 2,
+    id: 3,
     title: 'Majestic South Africa: Safari, Cape Town',
     location: 'South Africa',
     duration: '8 Days / 7 Nights',
@@ -26,7 +121,7 @@ export const internationalTours = [
     image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&h=300&fit=crop'
   },
   {
-    id: 3,
+    id: 4,
     title: 'Delightful Malaysia & Singapore',
     location: 'Malaysia & Singapore',
     duration: '7 Days / 6 Nights',
@@ -41,7 +136,7 @@ export const internationalTours = [
 
 export const nationalTours = [
   {
-    id: 4,
+    id: 5,
     title: 'Blue Paradise: Andaman Adventure',
     location: 'Andaman Islands',
     duration: '5 Days / 4 Nights',
@@ -51,7 +146,7 @@ export const nationalTours = [
     image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop'
   },
   {
-    id: 5,
+    id: 6,
     title: 'Gokarna Beach',
     location: 'Bangalore - Gokarna',
     duration: '4 Days / 3 Nights',
@@ -61,7 +156,7 @@ export const nationalTours = [
     image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&h=300&fit=crop'
   },
   {
-    id: 6,
+    id: 7,
     title: 'The Sacred Spiritual Triangle: Ayodhya - Varanasi - Prayagraj',
     location: 'Ayodhya',
     duration: '3 Days / 2 Nights',
@@ -154,7 +249,7 @@ export const nationalTours = [
     }
   },
   {
-    id: 7,
+    id: 8,
     title: 'Majestic Kashmir Delight',
     location: 'Srinagar, Gulmarg & Pahalgam',
     duration: '6 Days / 5 Nights',
@@ -197,6 +292,7 @@ export const nationalTours = [
         
       ],
     }
-  }
+  },
+  
   
 ];

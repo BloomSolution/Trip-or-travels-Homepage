@@ -489,7 +489,7 @@ const Navbar = () => {
             to="/contact"
             className="backdrop-blur-3xl bg-white/20 border border-white/30 text-white font-semibold px-4 py-1 rounded-full hover:bg-[#ff6600] hover:text-white transition-all duration-300 shadow-md"
           >
-            Contact Us
+            Enquery
           </Link>
         </div>
       </div>
@@ -525,14 +525,14 @@ const Navbar = () => {
 
               <div className="absolute -right-20 top-full mt-6 border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-white rounded-2xl shadow-2xl p-4 grid grid-cols-4 gap-4 w-[800px] z-50">
                 {[
-                  { name: "Vietnam", img: "https://images.unsplash.com/photo-1548786817-47c6c7c0a6f7" },
-                  { name: "Bali", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" },
-                  { name: "Dubai", img: "https://images.unsplash.com/photo-1504274066651-8d31a536b11a" },
-                  { name: "Thailand", img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" },
-                  { name: "Bhutan", img: "https://images.unsplash.com/photo-1577946152908-67f6e4b95f7a" },
-                  { name: "Kashmir", img: "https://images.unsplash.com/photo-1587300003388-59208cc962cb" },
-                  { name: "Japan", img: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c" },
-                  { name: "South Africa", img: "https://images.unsplash.com/photo-1549893079-842e6e89d22a" },
+                  { name: "Vietnam", img: "https://d2rdhxfof4qmbb.cloudfront.net/wp-content/uploads/2023/06/thehoneycombers.com_.jpg" },
+                  { name: "Malaysiya/Singapore", img: "https://wallpapercave.com/wp/wp1841860.jpg" },
+                  { name: "Bali ", img: "https://wallpaperaccess.com/full/373636.jpg" },
+                  { name: "Thailand", img: "https://wallpapercave.com/wp/wp4189624.jpg" },
+                  { name: "Ayodhya ", img: "https://www.setmytrip.in/wp-content/uploads/2023/12/PSX_20231231_170054.jpg" },
+                  { name: "Goa", img: "https://www.clubmahindra.com/blog/media/section_images/goa-travel-15f65aefe1582dc.jpg" },
+                  { name: "Napal & Kashi", img: "https://www.travelandleisureindia.in/wp-content/uploads/2020/07/Feature-image-Varanasi-Temples.jpg" },
+                  { name: "Andaman and Nicobar", img: "https://wallpapercave.com/wp/wp7333491.jpg" },
                 ].map((item, i) => (
                   <Link
                     key={i}
@@ -541,7 +541,7 @@ const Navbar = () => {
                   >
                     <img src={item.img} alt={item.name} className="w-full h-32 object-cover" />
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                      <span className="text-white font-semibold text-lg">{item.name}</span>
+                      <span className="text-white font-semibold text-sm">{item.name}</span>
                     </div>
                   </Link>
                 ))}
@@ -573,7 +573,7 @@ const Navbar = () => {
                   >
                     <img src={item.img} alt={item.name} className="w-full h-32 object-cover" />
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                      <span className="text-white font-semibold text-lg">{item.name}</span>
+                      <span className="text-white font-semibold text-sm">{item.name}</span>
                     </div>
                   </Link>
                 ))}
@@ -628,7 +628,7 @@ const Navbar = () => {
                   Destinations
                 </summary>
                 <ul className="ml-3 mt-2 space-y-3 text-gray-600 text-md font-semibold">
-                  {["Vietnam", "Bali", "Dubai", "Thailand", "Bhutan", "Kashmir", "Japan", "South Africa"].map((item) => (
+                  {["Dubai ", "Malaysiya/Singapore ", "Bali ", "Thailand", "Ayodhya ", "Goa", "Napal & Kashi ", "Andaman and Nicobar"].map((item) => (
                     <li key={item}>
                       <Link to={`/destination/${item.toLowerCase()}`} className="hover:text-[#ff6600] block">
                         {item}
