@@ -201,7 +201,7 @@ export default function Footer() {
               className="w-36 mb-3"
             />
             <p className="text-gray-300 text-sm mb-4">
-              Travels and Tours Pvt Ltd,
+              Trip or travels holidays
               is a Bengaluru-based tour operator specializing in International
               and Domestic Group Tours, Customized Tours, and Adventure Treks!
             </p>
