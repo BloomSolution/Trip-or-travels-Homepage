@@ -81,14 +81,14 @@ const Popup = ({ onClose }) => {
           Experience luxury and adventure: guided city tours, desert safari, cruise dinner, Burj Khalifa, Corniche Beach, and more. All meals, flights, visa, hotel & transfers included!
         </p>
         {/* Highlights */}
-        <ul className="list-disc list-inside text-blue-700 dark:text-blue-200 text-sm mb-3 pl-3">
+        {/* <ul className="list-disc list-inside text-blue-700 dark:text-blue-200 text-sm mb-3 pl-3">
           <li>Sheikh Zayed Grand Mosque visit</li>
           <li>Dubai Marina Dhow Cruise with Dinner</li>
           <li>Desert Safari & Live Shows</li>
           <li>Burj Khalifa & Dubai Mall</li>
           <li>Corniche Beach & Heritage Village</li>
           <li>Ferrari World & BAPS Temple</li>
-        </ul>
+        </ul> */}
         <div className="mb-3 text-xs italic text-gray-600 dark:text-gray-400 text-center">
           Includes: 5 Nights 4★ Hotel · All Meals · Airfare & Visa · All Transfers & Entry Fees
         </div>
