@@ -46,13 +46,16 @@ const Popup = ({ onClose }) => {
     <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center transition-opacity animate-fadeIn">
       <div className="relative bg-white dark:bg-gray-900 rounded-lg shadow-2xl border-4 border-blue-800 w-full max-w-xl p-6 mx-2 animate-slideUp">
         {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute right-3 top-3 text-xl text-gray-500 hover:text-red-500 z-10"
-          aria-label="Close"
-        >
-          &times;
-        </button>
+         <button
+  onClick={onClose}
+  className="absolute right-5 top-5 z-10 text-xl font-bold text-gray-500 
+             hover:text-white hover:bg-red-600 transition-all duration-300 
+             border border-gray-300 rounded-full px-1.5 py- 
+             shadow-sm hover:shadow-md hover:scale-110"
+  aria-label="Close"
+>
+  &times;
+</button>
         {/* Logo */}
         <div className="flex justify-center mb-4">
           <img src="/logo.png" alt="Trip or Travel Holidays Logo" className="h-14" />

@@ -448,7 +448,7 @@ const dates = Array.isArray(selectedTour.date)
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1825E7]"
                   />
                 </div>
                 <div>
@@ -459,11 +459,11 @@ const dates = Array.isArray(selectedTour.date)
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1825E7]"
                   />
                 </div>
                 <div className="flex">
-                  <select className="px-3 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:border-orange-500">
+                  <select className="px-3 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:border-[#1825E7]">
                     <option>🇮🇳 +91</option>
                   </select>
                   <input
@@ -473,7 +473,7 @@ const dates = Array.isArray(selectedTour.date)
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="flex-1 px-4 py-3 border-t border-r border-b border-gray-300 rounded-r-lg focus:outline-none focus:border-orange-500"
+                    className="flex-1 px-4 py-3 border-t border-r border-b border-gray-300 rounded-r-lg focus:outline-none focus:border-[#1825E7]"
                   />
                 </div>
                 <div>
@@ -483,12 +483,12 @@ const dates = Array.isArray(selectedTour.date)
                     value={formData.message}
                     onChange={handleInputChange}
                     rows="3"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#1825E7]"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors"
+                  className="w-full bg-[#1825E7] hover:bg-[#0d17a6] text-white py-3 rounded-lg font-semibold transition-colors"
                 >
                   Submit Now
                 </button>

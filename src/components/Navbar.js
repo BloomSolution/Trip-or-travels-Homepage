@@ -104,7 +104,7 @@
 //             {/* ✅ Contact Button */}
 //             <Link
 //               to="/contact"
-//               className=" backdrop-blur-3xl bg-white/20 border border-white/30 text-white font-semibold px-4 py-1 rounded-full hover:bg-[#ff6600] hover:text-white transition-all duration-300 shadow-md"
+//               className=" backdrop-blur-3xl bg-white/20 border border-white/30 text-white font-semibold px-4 py-1 rounded-full hover:bg-[#1825E7] hover:text-white transition-all duration-300 shadow-md"
 //             >
 //               Contact Us
 //             </Link>
@@ -132,7 +132,7 @@
 //               <div className="relative group">
 //                 <Link
 //                   to="/destinations"
-//                   className={`relative font-semibold text-[1.1rem] transition duration-300 ${isScrolled ? "text-black/80 hover:text-[#ff6600]" : "text-white/80 hover:text-[#ff6600]"
+//                   className={`relative font-semibold text-[1.1rem] transition duration-300 ${isScrolled ? "text-black/80 hover:text-[#1825E7]" : "text-white/80 hover:text-[#1825E7]"
 //                     }`}
 //                 >
 //                   Destinations
@@ -171,7 +171,7 @@
 //               <div className="relative group">
 //                 <Link
 //                   to="#"
-//                   className={`relative font-semibold text-[1.1rem] transition duration-300 ${isScrolled ? "text-black/80 hover:text-[#ff6600]" : "text-white/80 hover:text-[#ff6600]"
+//                   className={`relative font-semibold text-[1.1rem] transition duration-300 ${isScrolled ? "text-black/80 hover:text-[#1825E7]" : "text-white/80 hover:text-[#1825E7]"
 //                     }`}
 //                 >
 //                   Category
@@ -208,8 +208,8 @@
 //                     key={index}
 //                     to={path}
 //                     className={`relative font-semibold text-[1.1rem] transition duration-300 ${isScrolled
-//                         ? "text-black/80 hover:text-[#ff6600]"
-//                         : "text-white/80 hover:text-[#ff6600]"
+//                         ? "text-black/80 hover:text-[#1825E7]"
+//                         : "text-white/80 hover:text-[#1825E7]"
 //                       }`}
 //                   >
 //                     {["ABOUT", "PACKAGE", "BLOG"][index]}
@@ -225,10 +225,10 @@
 //                 isScrolled ? "bg-white/20" : "bg-[#ffffff26] backdrop-blur-xl"
 //               }`}
 //             >
-//               <FiPhoneCall className="text-[22px] text-[#ff6600]" />
+//               <FiPhoneCall className="text-[22px] text-[#1825E7]" />
 //               <div className="text-[0.9rem] whitespace-nowrap">
 //                 <span className="text-gray-200 text-[13px] block">To More Inquiry</span>
-//                 <a href="tel:+917795183828" className="text-[#ff6600] font-bold">
+//                 <a href="tel:+917795183828" className="text-[#1825E7] font-bold">
 //                   +91 7795183828
 //                 </a>
 //               </div>
@@ -264,7 +264,7 @@
 //                   key={index}
 //                   to={path}
 //                   onClick={() => setIsOpen(false)}
-//                   className="w-full text-center text-white font-semibold text-lg py-3 rounded-lg hover:bg-[#ff6600]/20 hover:text-[#ff6600] transition-all duration-300"
+//                   className="w-full text-center text-white font-semibold text-lg py-3 rounded-lg hover:bg-[#1825E7]/20 hover:text-[#1825E7] transition-all duration-300"
 //                 >
 //                   {["ABOUT", "GALLERY", "CONTACT US"][index]}
 //                 </Link>
@@ -317,7 +317,7 @@
 //           </div>
 //           <Link
 //             to="/contact"
-//             className="backdrop-blur-3xl bg-white/20 border border-white/30 text-white font-semibold px-4 py-1 rounded-full hover:bg-[#ff6600] hover:text-white transition-all duration-300 shadow-md"
+//             className="backdrop-blur-3xl bg-white/20 border border-white/30 text-white font-semibold px-4 py-1 rounded-full hover:bg-[#1825E7] hover:text-white transition-all duration-300 shadow-md"
 //           >
 //             Contact Us
 //           </Link>
@@ -345,8 +345,8 @@
 //               <Link
 //                 to="#"
 //                 className={`font-semibold text-[1.1rem] ${isScrolled
-//                   ? "text-black/80 hover:text-[#ff6600]"
-//                   : "text-white/80 hover:text-[#ff6600]"
+//                   ? "text-black/80 hover:text-[#1825E7]"
+//                   : "text-white/80 hover:text-[#1825E7]"
 //                   }`}
 //               >
 //                 Destinations
@@ -383,8 +383,8 @@
 //               <Link
 //                 to="#"
 //                 className={`font-semibold text-[1.1rem] ${isScrolled
-//                   ? "text-black/80 hover:text-[#ff6600]"
-//                   : "text-white/80 hover:text-[#ff6600]"
+//                   ? "text-black/80 hover:text-[#1825E7]"
+//                   : "text-white/80 hover:text-[#1825E7]"
 //                   }`}
 //               >
 //                 Category
@@ -422,8 +422,8 @@
 //                 key={i}
 //                 to={item.path}
 //                 className={`font-semibold text-[1.1rem] ${isScrolled
-//                   ? "text-black/80 hover:text-[#ff6600]"
-//                   : "text-white/80 hover:text-[#ff6600]"
+//                   ? "text-black/80 hover:text-[#1825E7]"
+//                   : "text-white/80 hover:text-[#1825E7]"
 //                   }`}
 //               >
 //                 {item.label}
@@ -487,7 +487,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/contact"
-            className="backdrop-blur-3xl bg-white/20 border border-white/30 text-white font-semibold px-4 py-1 rounded-full hover:bg-[#ff6600] hover:text-white transition-all duration-300 shadow-md"
+            className="backdrop-blur-3xl bg-white/20 border border-white/30 text-white font-semibold px-4 py-1 rounded-full hover:bg-[#1825E7] hover:text-white transition-all duration-300 shadow-md"
           >
             Enquery
           </Link>
@@ -516,8 +516,8 @@ const Navbar = () => {
                 to="#"
                 className={`font-semibold text-[1.1rem] ${
                   isScrolled
-                    ? "text-black/80 hover:text-[#ff6600]"
-                    : "text-white/80 hover:text-[#ff6600]"
+                    ? "text-black/80 hover:text-[#1825E7]"
+                    : "text-white/80 hover:text-[#1825E7]"
                 }`}
               >
                 Destinations
@@ -554,8 +554,8 @@ const Navbar = () => {
                 to="#"
                 className={`font-semibold text-[1.1rem] ${
                   isScrolled
-                    ? "text-black/80 hover:text-[#ff6600]"
-                    : "text-white/80 hover:text-[#ff6600]"
+                    ? "text-black/80 hover:text-[#1825E7]"
+                    : "text-white/80 hover:text-[#1825E7]"
                 }`}
               >
                 Category
@@ -589,8 +589,8 @@ const Navbar = () => {
                 to={item.path}
                 className={`font-semibold text-[1.1rem] ${
                   isScrolled
-                    ? "text-black/80 hover:text-[#ff6600]"
-                    : "text-white/80 hover:text-[#ff6600]"
+                    ? "text-black/80 hover:text-[#1825E7]"
+                    : "text-white/80 hover:text-[#1825E7]"
                 }`}
               >
                 {item.label}
@@ -624,13 +624,13 @@ const Navbar = () => {
                 <FiX />
               </button>
               <details>
-                <summary className="cursor-pointer text-lg font-semibold text-gray-800 hover:text-[#ff6600] uppercase">
+                <summary className="cursor-pointer text-lg font-semibold text-gray-800 hover:text-[#1825E7] uppercase">
                   Destinations
                 </summary>
                 <ul className="ml-3 mt-2 space-y-3 text-gray-600 text-md font-semibold">
                   {["Dubai ", "Malaysiya/Singapore ", "Bali ", "Thailand", "Ayodhya ", "Goa", "Napal & Kashi ", "Andaman and Nicobar"].map((item) => (
                     <li key={item}>
-                      <Link to={`/destination/${item.toLowerCase()}`} className="hover:text-[#ff6600] block">
+                      <Link to={`/destination/${item.toLowerCase()}`} className="hover:text-[#1825E7] block">
                         {item}
                       </Link>
                     </li>
@@ -639,19 +639,19 @@ const Navbar = () => {
               </details>
 
               <details>
-                <summary className="cursor-pointer text-lg font-semibold text-gray-800 hover:text-[#ff6600] uppercase">
+                <summary className="cursor-pointer text-lg font-semibold text-gray-800 hover:text-[#1825E7] uppercase">
                   Category
                 </summary>
                 <ul className="ml-3 mt-2 space-y-3 text-gray-600 text-md">
-                  <li><Link to="/national" className="hover:text-[#ff6600] block font-semibold">National</Link></li>
-                  <li><Link to="/international" className="hover:text-[#ff6600] block font-semibold">International</Link></li>
+                  <li><Link to="/national" className="hover:text-[#1825E7] block font-semibold">National</Link></li>
+                  <li><Link to="/international" className="hover:text-[#1825E7] block font-semibold">International</Link></li>
                 </ul>
               </details>
 
-              <Link to="/about" className="hover:text-[#ff6600] text-lg font-semibold text-gray-800">ABOUT</Link>
-              {/* <Link to="/package" className="hover:text-[#ff6600] text-lg font-semibold text-gray-800">PACKAGE</Link> */}
-              <Link to="/#" className="hover:text-[#ff6600] font-semibold text-lg text-gray-800">BLOG</Link>
-              <Link to="/contact" className="hover:text-[#ff6600] font-semibold text-lg text-gray-800">CONTACT</Link>
+              <Link to="/about" className="hover:text-[#1825E7] text-lg font-semibold text-gray-800">ABOUT</Link>
+              {/* <Link to="/package" className="hover:text-[#1825E7] text-lg font-semibold text-gray-800">PACKAGE</Link> */}
+              <Link to="/#" className="hover:text-[#1825E7] font-semibold text-lg text-gray-800">BLOG</Link>
+              <Link to="/contact" className="hover:text-[#1825E7] font-semibold text-lg text-gray-800">CONTACT</Link>
             </div>
           </>
         )}

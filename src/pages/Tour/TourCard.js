@@ -302,14 +302,14 @@ const TourCard = ({ tour, onViewMore }) => {
           </div>
 
           <div className="flex gap-3">
-            <button className="flex items-center justify-center w-1/3 border-2 border-orange-500 text-orange-500 py-2 rounded-lg font-medium hover:bg-orange-50 transition-colors">
+            <button className="flex items-center justify-center w-1/3 border-2 border-[#1825E7] text-[#1825E7] py-2 rounded-lg font-medium hover:bg-blue-50 transition-colors">
               <Phone className="w-4 h-4 mr-1" /> Call
             </button>
             {/* <Link to={`/tours/${tour.id}`} state={{ tour }} className="flex-1"> */}
             <button
               // onClick={() => onViewMore?.(tour)}
               onClick={handleViewMore}
-              className="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition-colors"
+              className="w-full bg-[#1825E7] text-white py-2 rounded-lg font-semibold hover:bg-[#0c18bf] transition-colors"
             >
               View More
             </button>
