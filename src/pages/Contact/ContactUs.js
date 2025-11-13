@@ -373,10 +373,23 @@
 
 
 // ! 3 
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, Plane, Palmtree, Mountain } from 'lucide-react';
 
 export default function ContactUs() {
+
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    // Scroll kare jab URL me #form ho
+    if (window.location.hash === "#form") {
+      setTimeout(() => {
+        formRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  }, []);
+
   const [formData, setFormData] = useState({
      name: '',
   email: '',
@@ -453,7 +466,7 @@ export default function ContactUs() {
       <div className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
-          <div className="text-center mb-16 fade-in-up">
+          <div ref={formRef} className="text-center mb-16 fade-in-up">
             <div className="inline-block mb-4">
               <div className="flex items-center justify-center space-x-2 bg-gradient-to-r from-sky-400 to-blue-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
                 <Plane className="w-4 h-4" />
@@ -546,7 +559,7 @@ export default function ContactUs() {
             </div>
 
             {/* Contact Form - Right Side */}
-            <div className="lg:col-span-3 fade-in-right">
+            <div  className="lg:col-span-3 fade-in-right">
               <div className="relative bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 md:p-12 border-2 border-blue-100 overflow-hidden">
                 {/* Decorative Background */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-sky-200/30 to-blue-300/30 rounded-full blur-3xl"></div>

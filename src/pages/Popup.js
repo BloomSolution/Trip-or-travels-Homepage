@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 // Gallery carousel for trip images
 const Gallery = ({ images }) => {
@@ -33,7 +35,7 @@ const Gallery = ({ images }) => {
 
 // Popup banner component
 const Popup = ({ onClose }) => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const images = [
     "https://a.cdn-hotels.com/gdcs/production15/d288/4474ed70-d272-41b6-9947-b76204f18fa1.jpg",
     "https://www.itl.cat/pngfile/big/80-801682_abu-dhabi.jpg",
@@ -44,18 +46,18 @@ const Popup = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center transition-opacity animate-fadeIn">
-      <div className="relative bg-white dark:bg-gray-900 rounded-lg shadow-2xl border-4 border-blue-800 w-full max-w-xl p-6 mx-2 animate-slideUp">
+      <div className="relative bg-white dark:bg-gray-900 rounded-lg shadow-2xl border-4 border-blue-800 w-full max-w-xl px-6 py-2 md:py-6 mx-2 animate-slideUp">
         {/* Close button */}
-         <button
-  onClick={onClose}
-  className="absolute right-5 top-5 z-10 text-xl font-bold text-gray-500 
+        <button
+          onClick={onClose}
+          className="absolute right-5 top-5 z-10 text-xl font-bold text-gray-500 
              hover:text-white hover:bg-red-600 transition-all duration-300 
              border border-gray-300 rounded-full px-1.5 py- 
              shadow-sm hover:shadow-md hover:scale-110"
-  aria-label="Close"
->
-  &times;
-</button>
+          aria-label="Close"
+        >
+          &times;
+        </button>
         {/* Logo */}
         <div className="flex justify-center mb-4">
           <img src="/logo.png" alt="Trip or Travel Holidays Logo" className="h-14" />
@@ -95,20 +97,20 @@ const Popup = ({ onClose }) => {
         {/* Buttons */}
         <div className="flex gap-2 justify-center mb-1">
           <button
-  className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded shadow animate-pulse"
-  onClick={() => {
-    onClose();           // Hide the popup
-    navigate('/tours/1'); // Navigate to the Tour Details page
-  }}
->
-  View Full Itinerary
-</button>
+            className="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded shadow animate-pulse"
+            onClick={() => {
+              onClose();           // Hide the popup
+              navigate('/tours/1'); // Navigate to the Tour Details page
+            }}
+          >
+            View Full Itinerary
+          </button>
           <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded shadow animate-bounce"
-          onClick={() => {
-    onClose();           // Hide the popup
-    navigate('/tours/1'); // Navigate to the Tour Details page
-  }}
-  >
+            onClick={() => {
+              onClose();           // Hide the popup
+              navigate('/tours/1', { state: { scrollToForm: true } }); // Navigate to the Tour Details page
+            }}
+          >
             Book Now
           </button>
         </div>
@@ -120,6 +122,19 @@ const Popup = ({ onClose }) => {
 // Parent component that displays the popup
 const TripPopup = () => {
   const [showPopup, setShowPopup] = useState(true);
+
+  const location = useLocation();
+
+useEffect(() => {
+  if (location.state?.scrollToForm) {
+    setTimeout(() => {
+      const form = document.getElementById("booking-form");
+      if (form) form.scrollIntoView({ behavior: "smooth" });
+    }, 500);
+  }
+}, [location]);
+
+
   return (
     <div>
       {/* Main site content can go here */}

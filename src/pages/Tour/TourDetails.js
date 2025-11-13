@@ -415,7 +415,7 @@ const dates = Array.isArray(selectedTour.date)
           </div>
 
           {/* Right Column - Enquiry Form */}
-          <div className="lg:col-span-1">
+          <div id="booking-form" className="lg:col-span-1">
             <div className="bg-white rounded-lg shadow-md p-6 sticky top-40">
               <div className="text-center mb-6">
                 <div className="text-3xl font-bold text-gray-800">
