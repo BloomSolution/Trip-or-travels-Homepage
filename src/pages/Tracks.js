@@ -15,7 +15,7 @@ const categories = [
 
 export default function Tracks() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 mt-10 border border-red-200 rounded-2xl max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 mt-10 border border-red-200 rounded-2xl mx-auto">
       {categories.map((item, i) => (
         <div
           key={i}

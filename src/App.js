@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Preloader from "./components/Preloader";
-import ScrollToTop from "./components/ScrollToTop"; // 👈 import
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import About from "./pages/About/About";
 import Gallery from "./pages/Gallery/Gallery";
@@ -25,6 +25,7 @@ import InternationalTours from "./pages/InterNational/InternationalTours";
 import National from "./pages/National/National";
 import InterNational from "./pages/InterNational/InterNational";
 import Popup from "./pages/Popup";
+import WeekendTrip from "./WeekendTrip";
 
 function AppWrapper() {
   const location = useLocation();
@@ -40,33 +41,26 @@ function AppWrapper() {
       {loading && <Preloader />}
       <Navbar />
 
-      {/* 👇 ensures each navigation scrolls to top */}
       <ScrollToTop />
-      <Popup/>
+      <Popup />
 
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/service" element={<Services/>} />
+          <Route path="/service" element={<Services />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/test" element={<Test/>} />
-          <Route path="/package" element={<TravelBookingSystem/>} />
-          {/* <Route path="/package/:id" element={<PackageDetailsPage />} /> */}
+          <Route path="/test" element={<Test />} />
+          <Route path="/package" element={<TravelBookingSystem />} />
           <Route path="/package/:id" element={<PackageDetails />} />
-
-           {/* <Route path="/international" element={<InternationalTours />} />
-          <Route path="/national" element={<NationalTours />} /> */}
-
-          <Route path="/international" element={<InterNational/>} />
-          <Route path="/national" element={<National/>} />
+          <Route path="/international" element={<InterNational />} />
+          <Route path="/national" element={<National />} />
           <Route path="/tours/:id" element={<TourDetails />} />
-
-
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/weekend-trips" element={<WeekendTrip/>} /> {/* ✅ New route */}
         </Routes>
         <FloatingIcons />
       </AnimatePresence>

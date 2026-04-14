@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Mail, Phone } from "lucide-react";
@@ -34,7 +32,6 @@ const Navbar = () => {
             </div>
           </div>
           <Link
-            // to="/contact"
             to="/contact#form"
             className="backdrop-blur-3xl bg-white/20 border border-white/30 text-white font-semibold px-4 py-1 rounded-full hover:bg-[#1825E7] hover:text-white transition-all duration-300 shadow-md"
           >
@@ -129,8 +126,8 @@ const Navbar = () => {
               </div>
             </div>
 
-            {[{ path: "/about", label: "ABOUT" },
-              // { path: "/package", label: "PACKAGE" },
+            {[
+              { path: "/about", label: "ABOUT" },
               { path: "/#", label: "BLOG" },
             ].map((item, i) => (
               <Link
@@ -145,6 +142,18 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
+
+            {/* ✅ Weekend Trips Link */}
+            <Link
+              to="/weekend-trips"
+              className={`font-semibold text-[1.1rem] ${
+                isScrolled
+                  ? "text-black/80 hover:text-[#1825E7]"
+                  : "text-white/80 hover:text-[#1825E7]"
+              }`}
+            >
+              WEEKEND TRIPS
+            </Link>
           </nav>
 
           {/* ✅ Mobile Menu Toggle */}
@@ -198,8 +207,9 @@ const Navbar = () => {
               </details>
 
               <Link to="/about" className="hover:text-[#1825E7] text-lg font-semibold text-gray-800">ABOUT</Link>
-              {/* <Link to="/package" className="hover:text-[#1825E7] text-lg font-semibold text-gray-800">PACKAGE</Link> */}
               <Link to="/#" className="hover:text-[#1825E7] font-semibold text-lg text-gray-800">BLOG</Link>
+              {/* ✅ Weekend Trips Link in Mobile */}
+              <Link to="/weekend-trips" className="hover:text-[#1825E7] font-semibold text-lg text-gray-800">WEEKEND TRIPS</Link>
               <Link to="/contact" className="hover:text-[#1825E7] font-semibold text-lg text-gray-800">CONTACT</Link>
             </div>
           </>
