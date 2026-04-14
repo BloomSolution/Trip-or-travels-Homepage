@@ -17,7 +17,7 @@ import {
 const packages = [
   {
     name: "Rameshwaram - Dhanushkodi",
-    image: "/Dhanushkodi.jpg",
+    image: "/DhanushKodi.jpg",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Arrive at Rameshwaram at 9am, Ramanathaswamy Temple,Panchmukhi Hanuman Temple and Floating Stone, Olaikaadu Beach, Villoondi Theertham and Beach",
