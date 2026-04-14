@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Preloader from "./components/Preloader";
 import ScrollToTop from "./components/ScrollToTop";
+import FloatingIcons from "./components/FloatingIcons";
+
 import Home from "./pages/Home";
 import About from "./pages/About/About";
 import Gallery from "./pages/Gallery/Gallery";
@@ -13,17 +16,16 @@ import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import Privacy from "./pages/Privacy/Privacy";
 import Services from "./pages/Service/Service";
-import FloatingIcons from "./components/FloatingIcons";
 import Test from "./pages/Tour/Test";
+
 import TravelBookingSystem from "./pages/Package/TravelBookingSystem";
-import PackageDetailsPage from "./pages/Package/PackageDetailsPage";
 import PackageDetails from "./pages/Package/PackageDetails";
+
 import TourDetails from "./pages/Tour/TourDetails";
-import TourBookingSystem from "./pages/Tour/TourBookingSystem";
-import NationalTours from "./pages/National/NationalTours";
-import InternationalTours from "./pages/InterNational/InternationalTours";
+
 import National from "./pages/National/National";
 import InterNational from "./pages/InterNational/InterNational";
+
 import Popup from "./pages/Popup";
 import WeekendTrip from "./WeekendTrip";
 
@@ -60,8 +62,9 @@ function AppWrapper() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="/weekend-trips" element={<WeekendTrip/>} /> {/* ✅ New route */}
+          <Route path="/weekend-trips" element={<WeekendTrip />} />
         </Routes>
+
         <FloatingIcons />
       </AnimatePresence>
 

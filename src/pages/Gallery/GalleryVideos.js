@@ -90,36 +90,45 @@
 
 import React, { useState, useEffect } from "react";
 
-const GalleryVideos = () => {
-  const [selectedVideo, setSelectedVideo] = useState(null);
-  const [thumbnails, setThumbnails] = useState({});
-
-  const videos = [
+const videos = [
     { src: "gallery/video-1.mp4" },
     { src: "gallery/video-2.mp4" },
   ];
 
+const GalleryVideos = () => {
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [thumbnails, setThumbnails] = useState({});
+
+
   // Generate thumbnail from video
   const generateThumbnail = (videoSrc, index) => {
-    const video = document.createElement("video");
-    video.src = `${process.env.PUBLIC_URL}/${videoSrc}`;
-    video.crossOrigin = "anonymous";
-    video.currentTime = 2;
+  const video = document.createElement("video");
+  video.src = `${process.env.PUBLIC_URL}/${videoSrc}`;
+  video.crossOrigin = "anonymous";
+  video.muted = true;
 
-    video.addEventListener("loadeddata", () => {
-      const canvas = document.createElement("canvas");
-      canvas.width = 320;
-      canvas.height = 180;
-      const ctx = canvas.getContext("2d");
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-      const thumbnail = canvas.toDataURL("image/png");
-      setThumbnails((prev) => ({ ...prev, [index]: thumbnail }));
-    });
+  const captureFrame = () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 320;
+    canvas.height = 180;
+    const ctx = canvas.getContext("2d");
+
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    const thumbnail = canvas.toDataURL("image/png");
+    setThumbnails((prev) => ({ ...prev, [index]: thumbnail }));
   };
 
+  video.addEventListener("loadeddata", () => {
+    video.currentTime = 1;
+  });
+
+  video.addEventListener("seeked", captureFrame);
+};
+
   useEffect(() => {
-    videos.forEach((v, i) => generateThumbnail(v.src, i));
-  }, []);
+  videos.forEach((v, i) => generateThumbnail(v.src, i));
+}, [videos]);
 
   return (
     <div className="text-center py-10 px-4 max-w-7xl mx-auto">

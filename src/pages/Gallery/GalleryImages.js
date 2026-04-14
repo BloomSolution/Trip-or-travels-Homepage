@@ -59,7 +59,7 @@
 // export default GalleryImages;
 
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const GalleryImages = () => {
   const [selectedIdx, setSelectedIdx] = useState(null);
@@ -75,8 +75,13 @@ const GalleryImages = () => {
     "gallery/img8.webp",
   ];
 
-  const handleNext = () => setSelectedIdx((p) => (p + 1) % images.length);
-  const handlePrev = () => setSelectedIdx((p) => (p - 1 + images.length) % images.length);
+const handleNext = useCallback(() => {
+  setSelectedIdx((p) => (p + 1) % images.length);
+}, [images.length]);
+
+const handlePrev = useCallback(() => {
+  setSelectedIdx((p) => (p - 1 + images.length) % images.length);
+}, [images.length]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -89,7 +94,7 @@ const GalleryImages = () => {
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [selectedIdx]);
+  }, [selectedIdx, handleNext, handlePrev]);
 
   return (
     <div className="text-center mx-auto my-10 px-4 max-w-6xl">
