@@ -1,5 +1,4 @@
-import React from 'react';
-
+// Home.js
 import Banner from '../components/Banner';
 import AboutUs from '../components/AboutUs';
 import Destinations from '../components/Destinations';
@@ -11,9 +10,9 @@ import Insta from '../components/Insta';
 import TourBookingSystem from './Tour/TourBookingSystem';
 import UpcomingToursSection from './Tour/UpcomingToursSection';
 import Tracks from './Tracks';
+import WeekendTripsPreview from '../components/WeekendTripsPreview'; // ✅ NEW
 
 function Home() {
-
   const handleViewMore = (tour) => {
     window.scrollTo(0, 0);
   };
@@ -22,6 +21,8 @@ function Home() {
     <>
       <Banner />
       <Tracks />
+      {/* ✅ Weekend Trips Preview Section */}
+      <WeekendTripsPreview />
       <UpcomingToursSection onViewMore={handleViewMore} />
       <AboutUs />
       <TourBookingSystem />
