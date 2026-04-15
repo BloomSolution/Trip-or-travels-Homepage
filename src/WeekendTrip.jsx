@@ -18,6 +18,7 @@ const packages = [
   {
     name: "Rameshwaram - Dhanushkodi",
     image: "/DhanushKodi.jpg",
+    price: "5555",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Arrive at Rameshwaram at 9am, Ramanathaswamy Temple,Panchmukhi Hanuman Temple and Floating Stone, Olaikaadu Beach, Villoondi Theertham and Beach",
@@ -27,6 +28,7 @@ const packages = [
   {
     name: "Varkala",
     image: "/Varkala.jpg",
+    price: "8499",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Quick FreshenUp and Breakfast, Janardhana Swamy Temple, Sivagiri Mutt, Varkala Cliff, Varkala Beach, Black Sand Beach",
@@ -36,6 +38,7 @@ const packages = [
   {
     name: "Udupi",
     image: "/Udupi.jpg",
+    price: "4666",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Arrive in Udupi, Maple Sea walk, St. Mary Islands, Padubidri beach",
@@ -45,6 +48,7 @@ const packages = [
   {
     name: "Valparai",
     image: "/Valparai.jpg",
+    price: "4499", // Placeholder if not specified; adjust as needed
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Reach Valparai, visit Aliyar Dam, Monkey Falls, and enjoy the tea estate views.",
@@ -54,6 +58,7 @@ const packages = [
   {
     name: "Vagamon",
     image: "/Vagamon.jpg",
+    price: "4499",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Arrive at Vagamon, visit the pine forests, meadows, and Kurisumala Ashram.",
@@ -63,6 +68,7 @@ const packages = [
   {
     name: "Kochi - Alleppey",
     image: "/Kochi.jpg",
+    price: "5999",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Arrive in Kochi around 9am quick freshnup up in hotel, Kochi Fort, Chinese Fishing Net, Jew Street, Mattancherry Palace, National Shrine basilica of Our Lady of Ransom, Marine Drive, SUnset Cruise Tour",
@@ -72,15 +78,17 @@ const packages = [
   {
     name: "Coorg",
     image: "/Coorg.jpg",
+    price: "3999",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
-      day01: "Drop of to Hotel for a frenshenup, Mandalpatti Peak ,Raja’s Tomb ,Abbey Waterfalls ,Sunset at Raja’s Seat",
+      day01: "Drop of to Hotel for a frenshenup, Mandalpatti Peak ,Raja's Tomb ,Abbey Waterfalls ,Sunset at Raja's Seat",
       day02: "Have a amazing breakfast and check out the hotel to explore ,Harangi Elephant Camp ,Nisargadhama Forest ,Tibetian Monastery/Golden Temple ,Head towards Bangalore",
     },
   },
   {
     name: "Ooty - Coonoor",
     image: "/Ooty.jpg",
+    price: "4999",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Drop of to Hotel for a frenshenup,Doddabetta Peak, Tea Plantation, Boat House, Tea factory, Chocolate Factory, Botanical Garden",
@@ -90,6 +98,7 @@ const packages = [
   {
     name: "Wayanad",
     image: "/Wayanad.jpg",
+    price: "4499",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Drop of to Hotel for a frenshenup ,900 kandi Eco-park (ticket included) ,Glass Bridge ,Longest Zip Line ,Private Soochipara Waterfalls",
@@ -99,6 +108,7 @@ const packages = [
   {
     name: "Kodaikanal",
     image: "/Kodaikanal.jpg",
+    price: "4999",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Drop of to Hotel for a frenshenup, Dolphin Nose, Vattakanal Falls, Coaker's Walk for Beautiful viewpoint, Kodaikanal Lake",
@@ -108,6 +118,7 @@ const packages = [
   {
     name: "Chikkamangalur",
     image: "/Chikmangaluru.jpg",
+    price: "3999",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Drop off at the Hotel for a freshen up ,Kemmangundi Park an amazing viewpoint ,Hebbe Falls for a breeze of water ,Z Point Drop by to hotel to complete the yummy Dinner",
@@ -117,6 +128,7 @@ const packages = [
   {
     name: "Gokarna",
     image: "/Gokarna.jpg",
+    price: "3999",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Drop of to Hotel for a frenshenup ,Gokarna Beach ,Kudla hilltop Trek ,Mirzan Fort ,Hippic Style Market",
@@ -126,6 +138,7 @@ const packages = [
   {
     name: "Munnar",
     image: "/Munnar.jpg",
+    price: "5999",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Drop of to Hotel for a freshenup, Elephant park, Mattupetty Dam, Echo Point, Kalaripayattu Culture Show.",
@@ -135,6 +148,7 @@ const packages = [
   {
     name: "Pondicherry",
     image: "/Pondicherry.jpg",
+    price: "4666",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "RDrop of to Hotel for a freshen up ,Sri Aurobindo Ashram, Pondicherry Museum, French Colony, French War Memorial, Notre Dame Des Anges Church, Pondicherry Lighthouse, Eco Beach",
@@ -144,6 +158,7 @@ const packages = [
   {
     name: "Hampi",
     image: "/Hampi.jpg",
+    price: "4444",
     itinerary: {
       day00: "The road trip from Bangalore starts at 10:00 P.M painted with the thrill of the journey. With every passing hour, the adventure deepens, fueled by the music and the cool breeze.",
       day01: "Drop of to Hotel for a freshen up ,Vali Cave Temple, Sanapur Lake, Anjanadri Hills for sunset view.",
@@ -218,7 +233,7 @@ const WeekendTrip = () => {
             transition={{ delay: 0.3, duration: 0.7 }}
             className="text-xl md:text-2xl text-white/90 mt-4 font-medium"
           >
-            2 days and 3 night packages to enjoy the weekend
+            2 days and 1 night packages to enjoy the weekend
           </motion.p>
         </div>
       </div>
@@ -258,15 +273,21 @@ const WeekendTrip = () => {
                 </div>
                 <div className="absolute bottom-3 right-3">
                   <span className="bg-blue-600/90 backdrop-blur-sm text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
-                    2 Days & 3 Nights
+                    2 Days & 1 Night
                   </span>
                 </div>
               </div>
 
               <div className="p-5 flex-1 flex flex-col">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                  {pkg.name}
-                </h3>
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-2xl font-bold text-gray-800">
+                    {pkg.name}
+                  </h3>
+                  <span className="text-2xl font-bold text-blue-600">
+                    ₹{pkg.price}
+                    <span className="text-sm font-normal text-gray-500 ml-1">/person</span>
+                  </span>
+                </div>
 
                 <button
                   onClick={() => openItinerary(pkg)}
@@ -317,10 +338,7 @@ const WeekendTrip = () => {
                   <MapPin className="text-blue-600" />
                   {selectedPackage.name} Itinerary
                 </h2>
-                <button
-                  onClick={closeItinerary}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                >
+                <button onClick={closeItinerary} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                   <X size={24} />
                 </button>
               </div>
