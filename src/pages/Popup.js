@@ -153,6 +153,7 @@
 // // @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 // // @keyframes slideUp { from { transform: translateY(60px); opacity: 0; } to { transform: none; opacity: 1; } }
 // components/Popup.jsx
+// components/Popup.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -184,8 +185,14 @@ const WeekendPopup = ({ onClose }) => {
   const navigate = useNavigate();
 
   const handleExplore = () => {
-    onClose();
+    onClose();                 // Close popup first
     navigate("/weekend-trips");
+  };
+
+  // Stop propagation so clicking the close button doesn't trigger navigation
+  const handleClose = (e) => {
+    e.stopPropagation();
+    onClose();
   };
 
   return (
@@ -194,18 +201,21 @@ const WeekendPopup = ({ onClose }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-      onClick={onClose}
+      onClick={onClose} // Clicking backdrop still closes the popup
     >
       <motion.div
         initial={{ scale: 0.9, y: 20 }}
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.9, y: 20 }}
-        className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border-2 border-amber-400"
-        onClick={(e) => e.stopPropagation()}
+        className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border-2 border-amber-400 cursor-pointer"
+        onClick={(e) => {
+          e.stopPropagation();   // Prevent backdrop click from firing
+          handleExplore();       // Navigate on any click inside the popup content
+        }}
       >
-        {/* Close Button */}
+        {/* Close Button – stops propagation so it doesn't navigate */}
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="absolute right-4 top-4 z-10 p-2 bg-gray-100 hover:bg-red-500 text-gray-600 hover:text-white rounded-full transition-all duration-300 shadow-md"
           aria-label="Close"
         >
@@ -282,10 +292,13 @@ const WeekendPopup = ({ onClose }) => {
             </ul>
           </div>
 
-          {/* Call to Action Button */}
+          {/* Call to Action Button – also stops propagation to avoid double navigation */}
           <div className="flex justify-center">
             <button
-              onClick={handleExplore}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleExplore();
+              }}
               className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
             >
               Explore All Weekend Trips <ArrowRight size={18} />
